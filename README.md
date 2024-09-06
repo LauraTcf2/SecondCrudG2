@@ -167,8 +167,10 @@ Dans le fichier `src/Controller/MyController.php`
 
 ### Création d'un environnement sécurisé
 
-Copie de '.env' vers '.env.local (cp.env .env .loacl)
-il faut changer la clé dans '.env.local'
+Copie de `.env` vers `.env.local (cp.env .env .loacl)
+il faut changer la clé dans '.env.local`
+
+
 
 ```.env
 # choix prod -> production, test -> test, dev -> devloppement
@@ -182,10 +184,19 @@ DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=16&ch
 
 #par
 
-# DATABASE_URL="mysql://root:@127.0.0.1:3306/secondcrudg2?serverVersion=8.0.32&charset=utf8mb4"
+DATABASE_URL="mysql://root:@127.0.0.1:3306/secondcrudg2?serverVersion=8.0.32&charset=utf8mb4"
 # DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=10.11.2-MariaDB&charset=utf8mb4"
-DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=16&charset=utf8"
+# DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=16&charset=utf8"
+
+```
+
+### On va créer la DB via `Doctrine`
+
+Symfony va chercher le chemin depuis `.env.local`
+
+$ php bin/console doctrine:database:create
 
 
+Racourci `php bin/console d:d:c` (doctrine:database:create)
 
 
