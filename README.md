@@ -200,3 +200,32 @@ $ php bin/console doctrine:database:create
 Racourci `php bin/console d:d:c` (doctrine:database:create)
 
 
+### On créer une entity
+
+         `php bin/console make:entity Article`
+         created: src/Entity/Article.php
+         created: src/Repository/ArticleRepository.php
+
+On va remplir les champs dans la console
+
+
+### Migration
+$ php bin/console make:migration
+created: migrations/Version20240906093813.php
+
+Si ça a fonctionné, verifiez le fichier dans le dossier migration, la requete SQL devrait correspondre à vos attentes.
+
+        Pour effectuer la migration:
+        php bin/console d:m : m
+         php bin/console doctrine:migrations:migrate
+
+
+Attention cette étape pourrait effacer des données (en dev uniquement)
+
+## Création du CRUD de `Article`
+
+$ php bin/console make:crud Article
+
+
+
+
